@@ -1,0 +1,35 @@
+﻿@model List<LoanManagement.Entity.LoanGeneration>
+@{
+}
+
+<h1>Loan Generations</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <td>Customer Onboarding</td>
+            <td>Loan Amount</td>
+            <td>Disbursement Amount</td>
+            <td>Interest Rate</td>
+            <td>Number of Instalments</td>
+            <td>Principal Amount</td>
+            <td>Interest Amount</td>
+            <th><a href="LoanGenerations/Add"><h2>Add</h2></a></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var emp in Model)
+        {
+            <tr>
+                <td>@emp.CustomerOnboardingId</td>
+                <td>@emp.LoanAmount</td>
+                <td>@emp.DisbursementAmount</td>
+                <td>@emp.InterestRate</td>
+                <td>@emp.NumberOfInstalments</td>
+                <td>@emp.PrincipalAmount</td>
+                <td>@emp.InterestAmount</td>
+                <td><a href="LoanGenerations/View/@emp.Id">View</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

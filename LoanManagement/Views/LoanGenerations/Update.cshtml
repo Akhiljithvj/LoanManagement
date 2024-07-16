@@ -1,0 +1,46 @@
+﻿@model LoanManagement.Models.UpdateLoanGenerationModel
+@{
+}
+<h2>UPDATE CUSTOMER</h2>
+<form method="post" action="View" class="mt-5">
+
+    <div class="invisible">
+        <input type="text" class="form-control" asp-for="Id">
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.CustomerOnboardingId, "CustomerOnboarding", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(model => model.CustomerOnboardingId, (SelectList)ViewBag.CustomerOnboardings, "Select Customer Onboardings", new { @class = "form-control" })
+            @* @Html.ValidationMessageFor(model => model.CustomerOnboardingId, "", new { @class = "text-danger" }) *@
+        </div>
+    </div>
+
+    <div class="mb-3">
+        <label for="" class="form-label">Loan Amount</label>
+        <input type="text" class="form-control" asp-for="LoanAmount">
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Disbursement Amount</label>
+        <input type="text" class="form-control" asp-for="DisbursementAmount">
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Interest Rate</label>
+        <input type="text" class="form-control" asp-for="InterestRate">
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Number of Instalments</label>
+        <input type="text" class="form-control" asp-for="NumberOfInstalments">
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Principal Amount</label>
+        <input type="text" class="form-control" asp-for="PrincipalAmount">
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Interest Amount</label>
+        <input type="text" class="form-control" asp-for="InterestAmount">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-danger" asp-action="Delete" asp-controller="Products">Delete</button>
+</form>
