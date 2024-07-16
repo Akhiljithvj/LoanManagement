@@ -11,6 +11,7 @@ namespace UserAuthentication.Entity
         }
 
         public DbSet<Product> Products { get; set; }
+        public DbSet<CustomerOnboarding> CustomerOnboardings { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);

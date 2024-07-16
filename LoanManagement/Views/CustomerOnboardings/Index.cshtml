@@ -1,0 +1,35 @@
+﻿@model List<LoanManagement.Entity.CustomerOnboarding>
+@{
+}
+
+<h1>Customer Onboardings</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <td>Code</td>
+            <td>Name</td>
+            <td>Address</td>
+            <td>City</td>
+            <td>State</td>
+            <td>ZipCode</td>
+            <td>Aadhaar</td>
+            <th><a href="CustomerOnboardings/Add"><h2>Add</h2></a></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var emp in Model)
+        {
+            <tr>
+                <td>@emp.Code</td>
+                <td>@emp.Name</td>
+                <td>@emp.Address</td>
+                <td>@emp.City</td>
+                <td>@emp.State</td>
+                <td>@emp.ZipCode</td>
+                <td>@emp.Aadhaar</td>
+                <td><a href="CustomerOnboardings/View/@emp.Id">View</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
